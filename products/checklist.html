@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Protocol - Jarvis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'JetBrains Mono', monospace; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .check-btn:active { transform: scale(0.9); }
+        .checked { opacity: 0.4; text-decoration: line-through; border-color: transparent !important; background: rgba(16, 185, 129, 0.05); }
+        .checked .icon { color: #10b981; }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-300 min-h-screen p-4 md:p-12">
+
+    <div class="max-w-2xl mx-auto space-y-8">
+        <!-- Header -->
+        <header class="flex justify-between items-end border-b border-slate-800 pb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tighter">DAILY <span class="text-blue-500">PROTOCOL</span></h1>
+                <p class="text-xs text-slate-500 mt-1 uppercase tracking-widest">Execute. Track. Evolve.</p>
+            </div>
+            <div class="text-right">
+                <p id="date-display" class="text-sm font-bold text-slate-400">15. FEB 2026</p>
+                <div class="flex items-center space-x-2 mt-1">
+                    <div class="w-32 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="bg-blue-500 h-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                    <span id="progress-text" class="text-[10px] font-bold">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sections -->
+        <div class="space-y-6">
+            
+            <!-- Category: Morning / Mindset -->
+            <div class="space-y-3">
+                <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Core / Morning</h3>
+                <div class="grid gap-3">
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-blue-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">🧘</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">Meditation / Deep Focus</p>
+                                <p class="text-[10px] text-slate-500">10 Minuten Stille</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Sidehustle -->
+            <div class="space-y-3">
+                <h3 class="text-[10px] font-bold text-blue-500 uppercase tracking-widest ml-1">Wealth / Sidehustle</h3>
+                <div class="grid gap-3">
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-blue-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">🕵️</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">Jarvis Leads Review</p>
+                                <p class="text-[10px] text-slate-500">Qualifiziere 5 neue Krypto-Leads</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-blue-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">🐦</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">X / Twitter Thread</p>
+                                <p class="text-[10px] text-slate-500">Daily Alpha Post abfeuern</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Health -->
+            <div class="space-y-3">
+                <h3 class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest ml-1">Health / Gym</h3>
+                <div class="grid gap-3">
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-emerald-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">🏋️</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">Main Workout</p>
+                                <p class="text-[10px] text-slate-500">Push / Pull / Legs Session</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-emerald-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">🥩</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">Protein Target</p>
+                                <p class="text-[10px] text-slate-500">160g Mindestmenge</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Uni -->
+            <div class="space-y-3">
+                <h3 class="text-[10px] font-bold text-purple-500 uppercase tracking-widest ml-1">Wisdom / Uni</h3>
+                <div class="grid gap-3">
+                    <div class="todo-item glass p-4 rounded-xl flex items-center justify-between cursor-pointer border border-slate-800 hover:border-purple-500/50 transition" onclick="toggleItem(this)">
+                        <div class="flex items-center">
+                            <span class="icon mr-4 text-xl">📚</span>
+                            <div>
+                                <p class="text-sm font-bold text-white">Study Block</p>
+                                <p class="text-[10px] text-slate-500">90 Min Deep Work (No Phone)</p>
+                            </div>
+                        </div>
+                        <div class="check-box w-6 h-6 border-2 border-slate-700 rounded-md flex items-center justify-center transition"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Info -->
+        <footer class="pt-8 border-t border-slate-900 text-center">
+            <p class="text-[10px] text-slate-600">JARVIS PROTOCOL v1.0 // SYNCED TO GITHUB</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleItem(el) {
+            el.classList.toggle('checked');
+            const checkBox = el.querySelector('.check-box');
+            if (el.classList.contains('checked')) {
+                checkBox.innerHTML = '✓';
+                checkBox.classList.add('bg-blue-500', 'border-blue-500');
+            } else {
+                checkBox.innerHTML = '';
+                checkBox.classList.remove('bg-blue-500', 'border-blue-500');
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.todo-item').length;
+            const checked = document.querySelectorAll('.todo-item.checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            document.getElementById('progress-bar').style.width = percentage + '%';
+            document.getElementById('progress-text').innerText = percentage + '%';
+        }
+
+        // Set Date
+        const options = { day: '2-digit', month: 'short', year: 'numeric' };
+        document.getElementById('date-display').innerText = new Date().toLocaleDateString('de-DE', options).toUpperCase();
+    </script>
+</body>
+</html>
