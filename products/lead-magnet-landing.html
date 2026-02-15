@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 kostenlose KI-Prompts für Content Creator - Hol dir dein Gratis-Pack!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .promo-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .promo-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .benefits {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .benefits li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefits li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .form-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-section h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .testimonials {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .guarantee {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .download-preview {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        .download-preview h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .preview-list {
+            list-style: none;
+        }
+        
+        .preview-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .preview-list li:before {
+            content: "📝";
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>5 kostenlose KI-Prompts für Content Creator</h1>
+            <p>Hol dir jetzt dein exklusives Prompt-Pack und revolutioniere deine Content-Erstellung mit KI. 100% kostenlos, sofortiger Download nach Anmeldung.</p>
+            <div class="guarantee">Keine Kosten • Keine Verpflichtungen • Sofortiger Zugang</div>
+        </header>
+        
+        <div class="main-content">
+            <section class="promo-section">
+                <h2>Was du in deinem Gratis-Pack erhältst:</h2>
+                
+                <div class="download-preview">
+                    <h3>Deine 5 Premium-Prompts:</h3>
+                    <ul class="preview-list">
+                        <li><strong>Viraler LinkedIn-Post Generator</strong> - Erstelle engagierende Business-Posts</li>
+                        <li><strong>Content-Kalender Strategie</strong> - Plane deine Woche in Minuten</li>
+                        <li><strong>Email-Newsletter Writer</strong> - Professionelle Newsletter automatisiert</li>
+                        <li><strong>Video-Skript Generator</strong> - Perfekte Skripte für YouTube & TikTok</li>
+                        <li><strong>SEO-Optimierter Blogpost</strong> - Google-freundliche Artikel erstellen</li>
+                    </ul>
+                </div>
+                
+                <ul class="benefits">
+                    <li><strong>Sofort einsatzbereit</strong> - Kopiere die Prompts direkt in ChatGPT/Claude</li>
+                    <li><strong>Zeitersparnis</strong> - Spare 10+ Stunden pro Woche an Content-Erstellung</li>
+                    <li><strong>Professionelle Ergebnisse</strong> - Getestet von 500+ Content Creatorn</li>
+                    <li><strong>Regelmäßige Updates</strong> - Erhalte neue Prompts jeden Monat</li>
+                    <li><strong>Community-Zugang</strong> - Tritt unserer exklusiven Telegram-Gruppe bei</li>
+                </ul>
+                
+                <p><strong>Format:</strong> PDF-Download mit detaillierten Anleitungen und Beispielen</p>
+            </section>
+            
+            <section class="form-section">
+                <h2>Hol dir dein kostenloses Prompt-Pack</h2>
+                <p>Trage dich ein und erhalte sofort den Download-Link per Email:</p>
+                
+                <form id="signup-form" action="/thank-you.html" method="GET">
+                    <div class="form-group">
+                        <label for="name">Dein Name</label>
+                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Deine Email-Adresse</label>
+                        <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profession">Deine Haupt-Tätigkeit</label>
+                        <input type="text" id="profession" name="profession" placeholder="Content Creator, Social Media Manager, etc." required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Jetzt kostenlos herunterladen</button>
+                </form>
+                
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #666; text-align: center;">
+                    Wir respektieren deine Privatsphäre. Kein Spam. Jederzeit abbestellbar.
+                </p>
+            </section>
+        </div>
+        
+        <section class="testimonials">
+            <h2>Was andere Content Creator sagen</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Die Prompts haben meine wöchentliche Arbeitszeit halbiert. Der LinkedIn-Post Generator allein hat mir 5 neue Kunden gebracht!"</p>
+                    <div class="testimonial-author">– Sarah L., Social Media Managerin</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Endlich verstehe ich, wie ich KI effektiv für Content nutzen kann. Die Schritt-für-Schritt-Anleitungen sind Gold wert."</p>
+                    <div class="testimonial-author">– Markus T., Blogger & YouTuber</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Seit ich das Pack nutze, poste ich regelmäßiger und die Engagement-Raten sind durch die Decke gegangen."</p>
+                    <div class="testimonial-author">– Julia K., Personal Branding Expertin</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2026 KI-Prompts für Content Creator | Alle Rechte vorbehalten</p>
+            <p><a href="#" style="color: white; opacity: 0.8;">Datenschutz</a> | <a href="#" style="color: white; opacity: 0.8;">Impressum</a> | <a href="#" style="color: white; opacity: 0.8;">Kontakt</a></p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const profession = document.getElementById('profession').value;
+            
+            // In einer echten Implementierung würde hier ein API-Call stehen
+            // Für diese Demo speichern wir die Daten im localStorage
+            const leadData = {
+                name: name,
+                email: email,
+                profession: profession,
+                timestamp: new Date().toISOString(),
+                downloadToken: 'prompt-pack-' + Math.random().toString(36).substr(2, 9)
+            };
+            
+            localStorage.setItem('leadMagnetSignup', JSON.stringify(leadData));
+            
+            // Weiterleitung zur Thank-You-Seite
+            window.location.href = 'thank-you.html?token=' + leadData.downloadToken;
+        });
+    </script>
+</body>
+</html>

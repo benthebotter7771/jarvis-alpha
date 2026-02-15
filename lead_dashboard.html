@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Jarvis Alpha - Lead Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8 text-blue-500">Jarvis Alpha - Control Center</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Stats -->
+            <div class="glass p-6 rounded-xl">
+                <h3 class="text-slate-400 text-sm mb-2">Gesamt Leads</h3>
+                <div id="total-leads" class="text-3xl font-bold">0</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <h3 class="text-slate-400 text-sm mb-2">Heute Gefunden</h3>
+                <div id="today-leads" class="text-3xl font-bold">0</div>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <h3 class="text-slate-400 text-sm mb-2">Status</h3>
+                <div class="text-green-500 font-bold flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    Systems Live
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Leads Table -->
+            <div class="lg:col-span-2">
+                <h2 class="text-xl font-bold mb-4">Neueste Leads</h2>
+                <div class="glass rounded-2xl overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-900 text-slate-400 uppercase text-xs font-bold">
+                            <tr>
+                                <th class="px-6 py-4">Zeitpunkt</th>
+                                <th class="px-6 py-4">Titel / Post</th>
+                                <th class="px-6 py-4">Aktion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lead-table" class="divide-y divide-slate-800">
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="px-6 py-4 text-sm text-slate-500">Jetzt gerade</td>
+                                <td class="px-6 py-4 font-semibold italic text-blue-400">Jarvis scannt r/CryptoCurrency, X und DexScreener...</td>
+                                <td class="px-6 py-4">
+                                    <span class="animate-pulse text-xs bg-blue-500/20 px-2 py-1 rounded">Aktiv</span>
+                                </td>
+                            </tr>
+                            <!-- Leads will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Assets Sidebar -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Daily Assets</h2>
+                <div class="space-y-4">
+                    <div class="glass p-4 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-sm">Aktueller Alpha Report</h4>
+                        <p class="text-xs text-slate-400 mb-3">PDF-Version für E-Mail Versand.</p>
+                        <a href="reports/latest_report.pdf" download class="block text-center bg-blue-600 hover:bg-blue-700 py-2 rounded text-xs font-bold transition">Download PDF</a>
+                    </div>
+                    
+                    <div class="glass p-4 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold text-sm">X (Twitter) Thread</h4>
+                        <p class="text-xs text-slate-400 mb-3">Heute generierter Social Content.</p>
+                        <textarea readonly class="w-full bg-slate-900 text-xs p-2 rounded h-24 border border-slate-700 focus:outline-none" id="x-thread-text">Lade Thread...</textarea>
+                        <button onclick="copyToClipboard('x-thread-text')" class="mt-2 w-full border border-purple-500 text-purple-500 py-1 rounded text-xs hover:bg-purple-500/10 transition">Text Kopieren</button>
+                    </div>
+
+                    <div class="glass p-4 rounded-xl border-l-4 border-pink-500">
+                        <h4 class="font-bold text-sm">Outreach Templates</h4>
+                        <p class="text-xs text-slate-400 mb-3">Fertige Antworten für Leads.</p>
+                        <a href="marketing/reply_templates.md" class="text-xs text-pink-400 hover:underline">Templates öffnen &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                // Load Leads
+                const leadRes = await fetch('marketing/leads.json');
+                const leads = await leadRes.json();
+                document.getElementById('total-leads').innerText = leads.length;
+                const table = document.getElementById('lead-table');
+                // Keep the "Scanning" row
+                const scanningRow = table.rows[0].outerHTML;
+                table.innerHTML = scanningRow;
+                leads.reverse().forEach(lead => {
+                    const row = document.createElement('tr');
+                    row.className = 'hover:bg-slate-900/50 transition';
+                    row.innerHTML = `
+                        <td class="px-6 py-4 text-sm text-slate-500">${new Date(lead.found_at).toLocaleString()}</td>
+                        <td class="px-6 py-4 font-semibold text-sm">${lead.title} <br><span class="text-xs text-blue-400">@${lead.subreddit}</span></td>
+                        <td class="px-6 py-4">
+                            <a href="${lead.url}" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs transition">View</a>
+                        </td>
+                    `;
+                    table.appendChild(row);
+                });
+
+                // Load X Thread (simulated since we can't easily fetch local file without backend)
+                // We'll update the text via the git deployment process
+                const threadRes = await fetch('marketing/latest_x_thread.txt');
+                const threadText = await threadRes.text();
+                document.getElementById('x-thread-text').value = threadText;
+
+            } catch (e) {
+                console.error("Data load error:", e);
+            }
+        }
+
+        function copyToClipboard(id) {
+            const copyText = document.getElementById(id);
+            copyText.select();
+            document.execCommand("copy");
+            alert("Kopiert!");
+        }
+
+        loadData();
+        setInterval(loadData, 60000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .nav-active { background: rgba(59, 130, 246, 0.2); border-left: 4px solid #3b82f6; color: white; }
+        .card-hover:hover { transform: translateY(-2px); transition: all 0.3s ease; border-color: rgba(59, 130, 246, 0.4); }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-200 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 border-r border-slate-800 flex-shrink-0 flex flex-col hidden md:flex">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">LifeOS</h1>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Personal Assistant Jarvis</p>
+        </div>
+        
+        <nav class="flex-1 px-4 space-y-2">
+            <button onclick="showSection('cockpit')" id="btn-cockpit" class="nav-item w-full flex items-center px-4 py-3 text-slate-400 hover:text-white rounded-lg transition nav-active">
+                <span class="mr-3">🏠</span> Cockpit
+            </button>
+            <button onclick="showSection('sidehustle')" id="btn-sidehustle" class="nav-item w-full flex items-center px-4 py-3 text-slate-400 hover:text-white rounded-lg transition">
+                <span class="mr-3">💰</span> Sidehustle
+            </button>
+            <button onclick="showSection('health')" id="btn-health" class="nav-item w-full flex items-center px-4 py-3 text-slate-400 hover:text-white rounded-lg transition">
+                <span class="mr-3">💪</span> Health
+            </button>
+            <button onclick="showSection('uni')" id="btn-uni" class="nav-item w-full flex items-center px-4 py-3 text-slate-400 hover:text-white rounded-lg transition">
+                <span class="mr-3">🎓</span> Uni
+            </button>
+        </nav>
+
+        <div class="p-4 mt-auto border-t border-slate-800">
+            <div class="flex items-center space-x-3">
+                <img id="user-avatar" src="" class="w-10 h-10 rounded-full bg-slate-800" alt="Avatar">
+                <div>
+                    <p class="text-sm font-bold" id="user-name">Nils</p>
+                    <p class="text-[10px] text-green-500">System Online</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <!-- Cockpit Section -->
+        <section id="cockpit" class="section-content space-y-8">
+            <header>
+                <h2 class="text-3xl font-bold">Willkommen zurück, <span class="text-blue-400">Nils</span>.</h2>
+                <p class="text-slate-400">Hier ist dein aktueller Status über alle Lebensbereiche.</p>
+            </header>
+
+            <!-- Goals Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="goals-grid">
+                <!-- Goals will be injected -->
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Quick Stats -->
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <span class="mr-2">🔥</span> Fokus-Punkte
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Uni Deadlines</span>
+                                <span class="text-orange-400">Dringend</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-orange-500 h-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Jarvis Alpha Scale</span>
+                                <span class="text-blue-400">Aktiv</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-bold mb-4">Letzte Aktivitäten</h3>
+                    <ul class="text-sm space-y-3 text-slate-400">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> Jarvis Alpha: 3 neue Leads gefunden</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span> Gym: Workout "Push" abgeschlossen</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> Uni: Übungsblatt Mathe II eingereicht</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidehustle Section (Hidden) -->
+        <section id="sidehustle" class="section-content hidden space-y-8">
+            <h2 class="text-3xl font-bold text-blue-400">Jarvis Alpha Control</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-slate-400 text-sm">Leads Heute</h3>
+                    <div id="side-leads-today" class="text-3xl font-bold">0</div>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-slate-400 text-sm">Revenue</h3>
+                    <div class="text-3xl font-bold text-emerald-400">0.00 €</div>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-slate-400 text-sm">Automations</h3>
+                    <div class="text-green-500 font-bold">Scanning...</div>
+                </div>
+            </div>
+            
+            <div class="glass rounded-2xl overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900/50 text-slate-400 text-xs font-bold uppercase">
+                        <tr><th class="px-6 py-4">Lead</th><th class="px-6 py-4">Plattform</th><th class="px-6 py-4">Action</th></tr>
+                    </thead>
+                    <tbody id="side-leads-table" class="divide-y divide-slate-800"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Health Section (Hidden) -->
+        <section id="health" class="section-content hidden space-y-8">
+            <h2 class="text-3xl font-bold text-emerald-400">Gym & Ernährung</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="font-bold mb-4 text-emerald-400">Makros Heute</h3>
+                    <canvas id="macroChart"></canvas>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="font-bold mb-4 text-emerald-400">Gewichtsverlauf</h3>
+                    <canvas id="weightChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uni Section (Hidden) -->
+        <section id="uni" class="section-content hidden space-y-8">
+            <h2 class="text-3xl font-bold text-purple-400">University Hub</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="uni-courses">
+                <!-- Courses injected here -->
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        let lifeData = {};
+
+        async function init() {
+            try {
+                const res = await fetch('marketing/life_os.json');
+                lifeData = await res.json();
+                
+                // Update Sidebar
+                document.getElementById('user-name').innerText = lifeData.user.name;
+                document.getElementById('user-avatar').src = lifeData.user.avatar;
+
+                renderCockpit();
+                renderSidehustle();
+                renderHealth();
+                renderUni();
+            } catch (e) {
+                console.error("Initialization Error:", e);
+            }
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.section-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('nav-active'));
+            document.getElementById('btn-' + id).classList.add('nav-active');
+        }
+
+        function renderCockpit() {
+            const grid = document.getElementById('goals-grid');
+            grid.innerHTML = '';
+            lifeData.goals.forEach(goal => {
+                const card = document.createElement('div');
+                card.className = 'glass p-6 rounded-2xl card-hover';
+                card.innerHTML = `
+                    <p class="text-[10px] uppercase text-slate-500 mb-1">${goal.area}</p>
+                    <h4 class="font-bold mb-4">${goal.title}</h4>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full mb-2">
+                        <div class="bg-blue-500 h-full rounded-full" style="width: ${goal.progress}%"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px]">
+                        <span class="text-slate-400">${goal.status}</span>
+                        <span class="text-white">${goal.progress}%</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function renderSidehustle() {
+            const leadRes = await fetch('marketing/leads.json');
+            const leads = await leadRes.json();
+            document.getElementById('side-leads-today').innerText = leads.length;
+            
+            const table = document.getElementById('side-leads-table');
+            table.innerHTML = '';
+            leads.slice(-5).reverse().forEach(lead => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="px-6 py-4 text-sm font-semibold">${lead.title.substring(0, 40)}...</td>
+                    <td class="px-6 py-4 text-xs text-blue-400">r/${lead.subreddit}</td>
+                    <td class="px-6 py-4"><a href="${lead.url}" target="_blank" class="text-blue-500 hover:underline text-xs">View</a></td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        function renderHealth() {
+            // Macro Chart
+            const ctxMacro = document.getElementById('macroChart').getContext('2d');
+            new Chart(ctxMacro, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Protein', 'Carbs', 'Fats'],
+                    datasets: [{
+                        data: [lifeData.gym.macros.protein, 250, 80],
+                        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b']
+                    }]
+                },
+                options: { plugins: { legend: { position: 'bottom', labels: { color: 'white' } } } }
+            });
+
+            // Weight Chart
+            const ctxWeight = document.getElementById('weightChart').getContext('2d');
+            new Chart(ctxWeight, {
+                type: 'line',
+                data: {
+                    labels: lifeData.gym.weight_history.map(h => h.date),
+                    datasets: [{
+                        label: 'Gewicht (kg)',
+                        data: lifeData.gym.weight_history.map(h => h.weight),
+                        borderColor: '#10b981',
+                        tension: 0.4
+                    }]
+                },
+                options: { scales: { y: { ticks: { color: 'white' } }, x: { ticks: { color: 'white' } } } }
+            });
+        }
+
+        function renderUni() {
+            const container = document.getElementById('uni-courses');
+            container.innerHTML = '';
+            lifeData.university.courses.forEach(course => {
+                const div = document.createElement('div');
+                div.className = 'glass p-6 rounded-2xl flex justify-between items-center';
+                div.innerHTML = `
+                    <div>
+                        <h4 class="font-bold">${course.name}</h4>
+                        <p class="text-xs text-slate-400">Deadline: ${course.deadline}</p>
+                    </div>
+                    <div class="text-purple-400 font-bold">${course.grade}</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>

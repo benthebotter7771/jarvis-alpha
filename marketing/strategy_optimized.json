@@ -1,0 +1,14 @@
+{
+    "Plattformen": {
+        "X (Twitter)": "T\u00e4glich 3 'Value-Threads' \u00fcber DePIN & Airdrops. Jarvis generiert den Content.",
+        "Reddit": "Aktive Teilnahme in r/airdrops, r/crypto_moons, r/CryptoCurrency. Beantwortung von Fragen mit Link zu Jarvis Alpha.",
+        "Discord": "Pr\u00e4senz in gro\u00dfen Alpha-Groups (Monad, Berachain).",
+        "LinkedIn": "Fokus auf DePIN als 'Future of Infrastructure' f\u00fcr B2B Leads."
+    },
+    "Content-S\u00e4ulen": [
+        "Case Studies: Wie man mit $0 einen Airdrop farmt.",
+        "Tech-Deep-Dives: Warum AI-Token 2026 dominieren.",
+        "Passive Income: DePIN Setup-Guides (Grass, Dawn)."
+    ],
+    "Automatisierung": "Jarvis scannt r/CryptoCurrency/new alle 15 Min nach Keywords: 'How to make money', 'Airdrop help', 'Best crypto 2026'."
+}

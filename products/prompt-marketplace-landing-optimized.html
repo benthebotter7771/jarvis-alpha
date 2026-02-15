@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptProfi - AI-Prompt-Marktplatz für deutsche Berufsgruppen | Sparen Sie 10+ Stunden/Woche</title>
+    <meta name="description" content="Spezialisierte KI-Prompts für deutsche Berufsgruppen. Sparen Sie 10+ Stunden pro Woche mit optimierten Prompts für Handwerker, Steuerberater, Ärzte & mehr.">
+    <meta name="keywords" content="KI-Prompts, ChatGPT, Berufsgruppen, Zeit sparen, AI-Templates, deutsche Berufe">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="PromptProfi - AI-Prompt-Marktplatz für deutsche Berufsgruppen">
+    <meta property="og:description" content="Sparen Sie 10+ Stunden pro Woche mit spezialisierten KI-Prompts für Ihren Beruf.">
+    <meta property="og:type" content="website">
+    
+    <!-- Trust Signals -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Analytics Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Hotjar Heatmap Tracking -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:0000000,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #0ea5e9;
+            --accent-color: #8b5cf6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .trust-badge i {
+            color: var(--success-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+        }
+
+        .usp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+        }
+
+        .social-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-proof-card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .social-proof-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-proof-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .social-proof-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        /* Lead Magnet Section */
+        .lead-magnet {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .lead-magnet-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .lead-magnet h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .lead-magnet p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .lead-magnet-list {
+            text-align: left;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: var(--radius-lg);
+        }
+
+        .lead-magnet-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .lead-magnet-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Email Signup Form */
+        .email-signup {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .email-signup h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.125rem;
+        }
+
+        /* Problem & Solution */
+        .problem-solution {
+            background-color: var(--bg-light);
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .ps-card {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .ps-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ps-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .ps-card ul {
+            list-style-position: inside;
+            margin-top: 20px;
+        }
+
+        .ps-card li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background-color: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-wrapper i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Berufsgruppen */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-header {
+            padding: 25px;
+            background-color: #f8fafc;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .category-icon i {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+        }
+
+        .category-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .category-body {
+            padding: 25px;
+        }
+
+        .prompt-example {
+            background-color: #f9fafb;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        /* Pricing */
+        .pricing {
+            background-color: var(--bg-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: var(--bg-light);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background-color: var(--bg-white);
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .cta-section h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .cta-button.white:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Manrope', sans-serif;
+            color: white;
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .section-title {
+                font-size: 1.875rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-5px);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* A/B Testing Classes */
+        .ab-test-variant-a .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .ab-test-variant-a .cta-button {
+            background-color: var(--accent-color);
+        }
+
+        .ab-test-variant-a .cta-button:hover {
+            background-color: #7c3aed;
+        }
+
+        .ab-test-variant-b .hero h1 {
+            font-size: 3rem;
+        }
+
+        .ab-test-variant-b .cta-button {
+            background-color: var(--success-color);
+        }
+
+        .ab-test-variant-b .cta-button:hover {
+            background-color: #0d9c6f;
+        }
+    </style>
+</head>
+<body class="ab-test-variant-a">
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Sichere Zahlung</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-clock"></i>
+            <span>30 Tage Geld-zurück-Garantie</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-users"></i>
+            <span>500+ zufriedene Kunden</span>
+        </div>
+        <div class="trust-badge">
+            <i class="fas fa-star"></i>
+            <span>4.9/5 Bewertungen</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>PromptProfi</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#problem">Problem</a></li>
+                        <li><a href="#loesung">Lösung</a></li>
+                        <li><a href="#berufe">Berufsgruppen</a></li>
+                        <li><a href="#preise">Preise</a></li>
+                        <li><a href="#testimonials">Erfahrungen</a></li>
+                    </ul>
+                </nav>
+                <a href="#lead-magnet" class="cta-button secondary">
+                    <i class="fas fa-gift"></i> Kostenlose Samples
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="usp-badge">
+                <i class="fas fa-bolt"></i> Spezialisiert auf deutsche Berufsgruppen
+            </div>
+            <h1>Sparen Sie 10+ Stunden pro Woche mit professionellen KI-Prompts</h1>
+            <p>Optimierte Prompts speziell für Handwerker, Steuerberater, Ärzte und andere deutsche Berufsgruppen. Keine Experimente mehr – nur messbare Ergebnisse.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Stunden/Woche gespart</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Professionelle Prompts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">94%</span>
+                    <span class="stat-label">Zufriedenheitsrate</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="#preise" class="cta-button" style="padding: 16px 32px; font-size: 1.1rem;">
+                    <i class="fas fa-rocket"></i> Jetzt Zeit sparen
+                </a>
+                <a href="#lead-magnet" class="cta-button secondary" style="margin-left: 20px;">
+                    <i class="fas fa-download"></i> Kostenlose Samples
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Von Experten empfohlen</h2>
+            <p class="section-subtitle">Professionelle aus verschiedenen Branchen vertrauen auf unsere optimierten Prompts</p>
+            
+            <div class="social-proof-grid">
+                <div class="social-proof-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Höchste Qualität</h3>
+                    <p>Alle Prompts werden von KI-Experten und Branchenspezialisten entwickelt und getestet.</p>
+                </div>
+                <div class="social-proof-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Nachweisbare Ergebnisse</h3>
+                    <p>Durchschnittlich 63% Zeitersparnis bei Routineaufgaben dokumentiert.</p>
+                </div>
+                <div class="social-proof-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Deutsche Sprache</h3>
+                    <p>Alle Prompts sind auf deutsche Geschäftskommunikation optimiert.</p>
+                </div>
+                <div class="social-proof-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Regelmäßige Updates</h3>
+                    <p>Monatliche Updates mit neuen Prompts für aktuelle Herausforderungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="lead-magnet" id="lead-magnet">
+        <div class="container">
+            <div class="lead-magnet-content">
+                <h2>Kostenlose Prompt-Samples als PDF</h2>
+                <p>Testen Sie 5 professionelle Prompts kostenlos – speziell für deutsche Berufsgruppen entwickelt.</p>
+                
+                <div class="lead-magnet-list">
+                    <ul>
+                        <li><strong>Handwerker:</strong> Professionelle Angebotserstellung in 5 Minuten</li>
+                        <li><strong>Steuerberater:</strong> Kundenkommunikation optimieren</li>
+                        <li><strong>Ärzte:</strong> Patienteninformationen verständlich erklären</li>
+                        <li><strong>Unternehmensberater:</strong> SWOT-Analysen strukturiert erstellen</li>
+                        <li><strong>Marketing:</strong> Deutsche Social-Media-Posts generieren</li>
+                    </ul>
+                </div>
+                
+                <div class="email-signup">
+                    <h3>PDF jetzt kostenlos herunterladen</h3>
+                    <form id="lead-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="name">Vor- und Nachname</label>
+                            <input type="text" id="name" name="name" required placeholder="Max Mustermann">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse</label>
+                            <input type="email" id="email" name="email" required placeholder="max@beispiel.de">
+                        </div>
+                        <div class="form-group">
+                            <label for="beruf">Ihre Berufsgruppe</label>
+                            <input type="text" id="beruf" name="beruf" required placeholder="z.B. Handwerker, Steuerberater, Arzt">
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">
+                            <i class="fas fa-download"></i> Kostenlose PDF herunterladen
+                        </button>
+                        <p class="form-disclaimer">Sie erhalten die PDF-Datei sofort per E-Mail. Kein Spam. Jederzeit abbestellbar.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="problem-solution" id="problem">
+        <div class="container">
+            <h2 class="section-title">Das Problem: KI ist mächtig, aber zeitaufwändig</h2>
+            <p class="section-subtitle">Die meisten Berufstätigen verschwenden wertvolle Zeit mit ineffizienter KI-Nutzung</p>
+            
+            <div class="ps-grid">
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Zeitverschwendung</h3>
+                    <p>Durchschnittlich verbringen Berufstätige 2-3 Stunden pro Woche damit, die richtigen Prompts zu finden und zu optimieren.</p>
+                    <ul>
+                        <li>Experimentieren mit verschiedenen Formulierungen</li>
+                        <li>Fehlende branchenspezifische Expertise</li>
+                        <li>Inkonsistente Ergebnisse</li>
+                    </ul>
+                </div>
+                
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Qualitätsprobleme</h3>
+                    <p>Generische Prompts liefern oft unzureichende Ergebnisse für spezifische berufliche Anforderungen.</p>
+                    <ul>
+                        <li>Fachlich ungenaue Antworten</li>
+                        <li>Fehlende deutsche Geschäftssprache</li>
+                        <li>Keine branchenspezifischen Formate</li>
+                    </ul>
+                </div>
+                
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Verpasste Chancen</h3>
+                    <p>Ohne optimierte Prompts verpassen Sie Effizienzgewinne und Wettbewerbsvorteile.</p>
+                    <ul>
+                        <li>Höhere Arbeitsbelastung</li>
+                        <li>Geringere Produktivität</li>
+                        <li>Verzögerte Projekte</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="loesung">
+        <div class="container">
+            <h2 class="section-title">Die Lösung: Professionelle Prompts für Ihren Beruf</h2>
+            <p class="section-subtitle">Sparen Sie Zeit und erhöhen Sie die Qualität Ihrer Arbeit mit spezialisierten Prompts</p>
+            
+            <div class="ps-grid">
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Sofort einsatzbereit</h3>
+                    <p>Keine Experimente mehr – unsere Prompts sind sofort einsatzbereit und liefern konsistente Ergebnisse.</p>
+                    <ul>
+                        <li>Copy & Paste in ChatGPT</li>
+                        <li>Anpassbare Vorlagen</li>
+                        <li>Sofortige Ergebnisse</li>
+                    </ul>
+                </div>
+                
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Branchenspezifisch</h3>
+                    <p>Prompts entwickelt von Experten für Ihre spezifischen beruflichen Anforderungen.</p>
+                    <ul>
+                        <li>Deutsche Geschäftssprache</li>
+                        <li>Branchenübliche Formate</li>
+                        <li>Rechtssichere Formulierungen</li>
+                    </ul>
+                </div>
+                
+                <div class="ps-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Nachhaltige Effizienz</h3>
+                    <p>Dokumentierte Zeitersparnis von durchschnittlich 10+ Stunden pro Woche.</p>
+                    <ul>
+                        <li>Wiederholbare Prozesse</li>
+                        <li>Skalierbare Lösungen</li>
+                        <li>Messbare Ergebnisse</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berufsgruppen -->
+    <section class="problem-solution" id="berufe">
+        <div class="container">
+            <h2 class="section-title">Für diese Berufsgruppen optimiert</h2>
+            <p class="section-subtitle">Spezialisierte Prompts für deutsche Berufsfelder</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Handwerker & Gewerbe</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Angebote, Rechnungen, Kundenkommunikation und Projektplanung optimieren.</p>
+                        <div class="prompt-example">
+                            "Erstelle ein professionelles Angebot für eine Heizungsinstallation inkl. Materialliste und Zeitplan."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Steuerberater & Buchhalter</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Steuererklärungen, Bilanzanalysen, Mandantenkommunikation und Compliance.</p>
+                        <div class="prompt-example">
+                            "Erkläre die Änderungen im Steuerrecht 2024 für Kleinunternehmer verständlich."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Ärzte & Gesundheitswesen</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Patienteninformationen, Befundberichte, Forschung und Verwaltung.</p>
+                        <div class="prompt-example">
+                            "Erstelle eine verständliche Patienteninformation zu Diabetes Typ 2 inkl. Ernährungstipps."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Unternehmensberater</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Strategiepapiere, Marktanalysen, Präsentationen und Kundenberichte.</p>
+                        <div class="prompt-example">
+                            "Analysiere die Wettbewerbssituation für ein mittelständisches Maschinenbauunternehmen."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Marketing & Vertrieb</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Kampagnen, Social Media, Verkaufstexte und Kundenanalysen.</p>
+                        <div class="prompt-example">
+                            "Erstelle einen Marketingplan für ein neues B2B-Softwareprodukt im deutschen Markt."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Rechtsanwälte & Notare</h3>
+                    </div>
+                    <div class="category-body">
+                        <p>Vertragsentwürfe, Rechtsgutachten, Mandantenschreiben und Forschung.</p>
+                        <div class="prompt-example">
+                            "Erstelle einen Mietvertrag für gewerbliche Räume in Deutschland inkl. Standardklauseln."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="preise">
+        <div class="container">
+            <h2 class="section-title">Einfache, transparente Preise</h2>
+            <p class="section-subtitle">Wählen Sie den Plan, der zu Ihren Anforderungen passt</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">€19<span>/Monat</span></div>
+                    <p>Für Einsteiger und kleine Teams</p>
+                    <ul class="pricing-features">
+                        <li>100+ Basis-Prompts</li>
+                        <li>2 Berufsgruppen</li>
+                        <li>Monatliche Updates</li>
+                        <li>E-Mail-Support</li>
+                        <li>PDF-Export</li>
+                    </ul>
+                    <a href="#lead-magnet" class="cta-button secondary">Kostenlos testen</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Am beliebtesten</div>
+                    <h3>Professional</h3>
+                    <div class="price">€49<span>/Monat</span></div>
+                    <p>Für professionelle Anwender</p>
+                    <ul class="pricing-features">
+                        <li>500+ Premium-Prompts</li>
+                        <li>Alle Berufsgruppen</li>
+                        <li>Wöchentliche Updates</li>
+                        <li>Prioritäts-Support</li>
+                        <li>Vorlagen-Bibliothek</li>
+                        <li>Team-Funktionen (bis zu 3)</li>
+                        <li>API-Zugang</li>
+                    </ul>
+                    <a href="#cta" class="cta-button">Jetzt starten</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Unternehmen</h3>
+                    <div class="price">€149<span>/Monat</span></div>
+                    <p>Für Teams und Organisationen</p>
+                    <ul class="pricing-features">
+                        <li>Unbegrenzte Prompts</li>
+                        <li>Alle Berufsgruppen + Custom</li>
+                        <li>Tägliche Updates</li>
+                        <li>24/7 Premium-Support</li>
+                        <li>White-Label Lösung</li>
+                        <li>Unbegrenzte Team-Mitglieder</li>
+                        <li>Dedizierter Account Manager</li>
+                        <li>Onboarding & Training</li>
+                    </ul>
+                    <a href="#cta" class="cta-button secondary">Kontakt aufnehmen</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><i class="fas fa-shield-alt"></i> 30 Tage Geld-zurück-Garantie • Keine langfristige Bindung • Jederzeit kündbar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Das sagen unsere Kunden</h2>
+            <p class="section-subtitle">Echte Erfahrungen von Berufstätigen wie Ihnen</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Als Handwerksmeister spare ich jetzt mindestens 8 Stunden pro Woche bei der Angebotserstellung und Kundenkommunikation. Die Prompts sind perfekt auf unsere Branche zugeschnitten."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MH</div>
+                        <div class="author-info">
+                            <h4>Markus Huber</h4>
+                            <p>Heizungsinstallateur-Meister</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Die steuerrechtlichen Prompts haben meine Arbeitszeit für Mandantenerklärungen halbiert. Besonders die deutschen Formulierungen und rechtssicheren Vorlagen sind unbezahlbar."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SW</div>
+                        <div class="author-info">
+                            <h4>Sabine Weber</h4>
+                            <p>Steuerberaterin</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Als Arzt in einer Gemeinschaftspraxis verwenden wir die Prompts für Patienteninformationen und Verwaltung. Die Zeitersparnis ist enorm und die Qualität der Texte hervorragend."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>Dr. Katharina Müller</h4>
+                            <p>Fachärztin für Innere Medizin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            <p class="section-subtitle">Alles, was Sie wissen müssen</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Funktionieren die Prompts mit allen KI-Tools?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ja, unsere Prompts sind kompatibel mit ChatGPT, Claude, Gemini und anderen großen Sprachmodellen. Sie sind so formuliert, dass sie mit den meisten KI-Tools optimale Ergebnisse liefern.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Kann ich die Prompts anpassen?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolut! Alle Prompts sind als Vorlagen konzipiert, die Sie einfach an Ihre spezifischen Bedürfnisse anpassen können. Wir bieten auch Anleitungen zur Optimierung für Ihre individuellen Anforderungen.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Wie oft werden neue Prompts hinzugefügt?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Je nach Plan erhalten Sie wöchentliche oder monatliche Updates mit neuen Prompts. Diese basieren auf aktuellen Markttrends, Kundenfeedback und neuen KI-Entwicklungen.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Gibt es eine Geld-zurück-Garantie?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ja, wir bieten eine 30-tägige Geld-zurück-Garantie. Wenn Sie nicht zufrieden sind, erhalten Sie Ihre Zahlung zurück – ohne Fragen.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Kann ich meinen Plan upgraden?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ja, Sie können jederzeit upgraden. Die Differenz wird anteilig berechnet und Ihr Account sofort aktualisiert.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Starten Sie noch heute Ihre Zeitersparnis</h2>
+            <p>Über 500 Berufstätige sparen bereits wertvolle Zeit mit unseren optimierten Prompts. Werden Sie Teil der Community.</p>
+            
+            <div class="cta-buttons">
+                <a href="#preise" class="cta-button white" style="padding: 16px 40px;">
+                    <i class="fas fa-rocket"></i> Jetzt Professional Plan wählen
+                </a>
+                <a href="#lead-magnet" class="cta-button secondary" style="padding: 16px 40px;">
+                    <i class="fas fa-download"></i> Erstmal kostenlos testen
+                </a>
+            </div>
+            
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">94%</div>
+                    <div>Zufriedenheitsrate</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">10h+</div>
+                    <div>Durchschn. Zeitersparnis/Woche</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;">30</div>
+                    <div>Tage Geld-zurück</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PromptProfi</h3>
+                    <p>Spezialisierte KI-Prompts für deutsche Berufsgruppen. Sparen Sie Zeit, erhöhen Sie Qualität.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produkt</h3>
+                    <ul>
+                        <li><a href="#berufe">Berufsgruppen</a></li>
+                        <li><a href="#preise">Preise</a></li>
+                        <li><a href="#lead-magnet">Kostenlose Samples</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#testimonials">Erfahrungen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Unternehmen</h3>
+                    <ul>
+                        <li><a href="#">Über uns</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Karriere</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Presse</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="#">AGB</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Widerrufsrecht</a></li>
+                        <li><a href="#">Cookie-Richtlinie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@promptprofi.de</li>
+                        <li><i class="fas fa-phone"></i> +49 123 456789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Musterstraße 1, 10115 Berlin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 PromptProfi GmbH. Alle Rechte vorbehalten.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem;">
+                    Diese Seite verwendet Cookies und Analytics-Tracking. Durch die Nutzung stimmen Sie unseren <a href="#" style="color: #9ca3af;">Datenschutzbestimmungen</a> zu.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                answer.classList.add('active');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+        
+        // Form Submission
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const beruf = document.getElementById('beruf').value;
+            
+            // Simulate form submission
+            const button = this.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird verarbeitet...';
+            button.disabled = true;
+            
+            // In production, this would send data to your backend
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> PDF gesendet!';
+                button.style.backgroundColor = 'var(--success-color)';
+                
+                // Track conversion in Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'lead_form_submit', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Free PDF Download'
+                    });
+                }
+                
+                // Show success message
+                alert(`Vielen Dank ${name}! Die PDF mit den Prompt-Samples wurde an ${email} gesendet.`);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    button.style.backgroundColor = '';
+                    document.getElementById('lead-form').reset();
+                }, 3000);
+            }, 1500);
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_click', {
+                        'event_category': 'Engagement',
+                        'event_label': buttonText,
+                        'value': 1
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+        
+        // A/B Testing Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple A/B test: 50% chance for variant B
+            const isVariantB = Math.random() > 0.5;
+            
+            if (isVariantB) {
+                document.body.classList.remove('ab-test-variant-a');
+                document.body.classList.add('ab-test-variant-b');
+                
+                // Track A/B test assignment
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'ab_test_assignment', {
+                        'event_category': 'Testing',
+                        'event_label': 'Variant B',
+                        'value': 1
+                    });
+                }
+            } else {
+                // Track A/B test assignment
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'ab_test_assignment', {
+                        'event_category': 'Testing',
+                        'event_label': 'Variant A',
+                        'value': 1
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

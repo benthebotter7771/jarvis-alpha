@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptProfi - KI-Prompts für Berufsgruppen</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Products */
+        .products {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .product-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 1rem 0;
+        }
+        
+        .price-sub {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">PromptProfi</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#products">Produkte</a></li>
+                    <li><a href="#testimonials">Erfahrungen</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="#cta" class="cta-button">Jetzt starten</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>KI-Prompts für Berufsgruppen</h1>
+            <p>Sparen Sie Stunden bei Angeboten, Berichten und Kundenkommunikation mit spezialisierten KI-Prompts für Ihren Beruf.</p>
+            <a href="#products" class="cta-button">Zu den Prompt-Packs</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Warum PromptProfi?</h2>
+            <p style="text-align: center; color: #64748b; max-width: 600px; margin: 0 auto 3rem;">
+                Professionelle Vorlagen, die sofort Ergebnisse liefern
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Zeitersparnis</h3>
+                    <p>Sparen Sie 5-10 Stunden pro Monat bei Routineaufgaben wie Angebotserstellung und Dokumentation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Branchenspezifisch</h3>
+                    <p>Prompts genau auf Ihre Berufsgruppe zugeschnitten - von Handwerkern bis zu Steuerberatern.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Bessere Ergebnisse</h3>
+                    <p>Professionellere Kommunikation und Dokumentation führt zu höheren Kundenzufriedenheit.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Regelmäßige Updates</h3>
+                    <p>Monatliche Updates basierend auf Gesetzesänderungen und neuen Best Practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Unsere Prompt-Packs</h2>
+            <p style="text-align: center; color: #64748b; max-width: 600px; margin: 0 auto 3rem;">
+                Wählen Sie das passende Pack für Ihre Berufsgruppe
+            </p>
+            
+            <div class="products-grid">
+                <!-- Handwerker Pack -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Handwerker Pack</h3>
+                        <p>Für Elektriker, Installateure, Maler, Zimmerer</p>
+                    </div>
+                    <div class="product-content">
+                        <div class="price">€49</div>
+                        <div class="price-sub">Einmalig oder €9/Monat</div>
+                        
+                        <ul style="list-style: none; margin: 1.5rem 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ 25+ spezifische Prompts</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Angebots- & Rechnungsvorlagen</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Arbeitsbericht-Generator</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Marketing-Vorlagen</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Rechtliche Templates</li>
+                        </ul>
+                        
+                        <a href="#cta" class="cta-button" style="display: block; text-align: center;">Jetzt kaufen</a>
+                    </div>
+                </div>
+                
+                <!-- Steuerberater Pack -->
+                <div class="product-card">
+                    <div class="product-header" style="background: var(--secondary);">
+                        <h3>Steuerberater Pack</h3>
+                        <p>Für Steuerberater, Buchhalter, Wirtschaftsprüfer</p>
+                    </div>
+                    <div class="product-content">
+                        <div class="price">€79</div>
+                        <div class="price-sub">Einmalig oder €12/Monat</div>
+                        
+                        <ul style="list-style: none; margin: 1.5rem 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ Steuererklärungs-Assistent</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Mandantenkommunikation</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Gesetzes-Updates</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Berichtsvorlagen</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Compliance-Checklisten</li>
+                        </ul>
+                        
+                        <a href="#cta" class="cta-button" style="display: block; text-align: center; background: var(--secondary);">Jetzt kaufen</a>
+                    </div>
+                </div>
+                
+                <!-- Ärzte Pack -->
+                <div class="product-card">
+                    <div class="product-header" style="background: var(--success);">
+                        <h3>Ärzte Pack</h3>
+                        <p>Für Ärzte, Therapeuten, Medizinisches Personal</p>
+                    </div>
+                    <div class="product-content">
+                        <div class="price">€89</div>
+                        <div class="price-sub">Einmalig oder €14/Monat</div>
+                        
+                        <ul style="list-style: none; margin: 1.5rem 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ Patientenberichte</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Arztbrief-Vorlagen</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Forschungszusammenfassungen</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Praxis-Marketing</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Dokumentationshilfen</li>
+                        </ul>
+                        
+                        <a href="#cta" class="cta-button" style="display: block; text-align: center; background: var(--success);">Jetzt kaufen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Was unsere Kunden sagen</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Die Angebotsvorlagen haben mir mindestens 3 Stunden pro Woche gespart. Jetzt kann ich mich auf die eigentliche Arbeit konzentrieren."</p>
+                    <div style="margin-top: 1rem; font-weight: bold;">Markus B., Elektromeister</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Als Steuerberaterin helfen mir die Prompts, Mandanten komplexe Sachverhalte verständlich zu erklären. Großartige Investition!"</p>
+                    <div style="margin-top: 1rem; font-weight: bold;">Sarah K., Steuerberaterin</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Die Arztbrief-Vorlagen sind ein Game-Changer für unsere Praxis. Standardisiert, aber individuell anpassbar."</p>
+                    <div style="margin-top: 1rem; font-weight: bold;">Dr. Michael R., Hausarzt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Starten Sie noch heute</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.9;">
+                Wählen Sie Ihr Prompt-Pack und sparen Sie ab sofort Zeit bei täglichen Aufgaben.
+            </p>
+            <a href="#products" class="cta-button" style="background: white; color: var(--primary);">Zu den Produkten</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="features" style="background: white;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Häufige Fragen</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Wie funktionieren die Prompts?</h3>
+                    <p>Kopieren Sie die Prompts einfach in Ihr bevorzugtes KI-Tool (ChatGPT, Claude, etc.), ersetzen Sie die Platzhalter und erhalten Sie sofort professionelle Ergebnisse.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Kann ich die Vorlagen anpassen?</h3>
+                    <p>Ja, alle Vorlagen sind vollständig anpassbar. Passen Sie sie an Ihr Corporate Design und Ihre individuellen Anforderungen an.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Gibt es Updates?</h3>
+                    <p>Abonnenten erhalten monatliche Updates basierend auf Gesetzesänderungen und neuen Best Practices in ihrer Branche.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Welche Zahlungsmethoden?</h3>
+                    <p>Kreditkarte, PayPal und SEPA-Lastschrift. Einmalzahlung oder monatliches Abonnement verfügbar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">PromptProfi</h3>
+                    <p>KI-Prompts für Berufsgruppen</p>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Kontakt</h3>
+                    <p>support@promptprofi.de</p>
+                    <p>+49 123 456789</p>
+                </div>
+                
+                <div>
+                    <
