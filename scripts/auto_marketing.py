@@ -4,6 +4,10 @@ import subprocess
 def run_marketing_engine():
     print("🚀 Starte Jarvis Alpha Marketing Engine...")
     
+    # 0. Scam-Radar: Sicherheit zuerst
+    print("Running Scam-Radar Security Check...")
+    subprocess.run(["python3", "/root/business/scripts/scam_radar.py"])
+
     # 1. Generiere aktuellen Alpha Report (PDF)
     print("Generating PDF Report...")
     subprocess.run(["node", "/root/business/scripts/report_to_pdf.js"])
@@ -12,9 +16,9 @@ def run_marketing_engine():
     print("Generating X Thread...")
     subprocess.run(["python3", "/root/business/scripts/generate_x_thread.py"])
     
-    # 3. Generiere Pinterest Infografik
-    print("Generating Pinterest Infographic...")
-    subprocess.run(["python3", "/root/business/scripts/generate_infographic.py"])
+    # 3. Meme-Agent: Viral Content
+    print("Meme-Agent generating viral assets...")
+    subprocess.run(["python3", "/root/business/scripts/meme_agent.py"])
     
     # 4. Git Sync (Hochladen auf GitHub Pages)
     print("Syncing to GitHub...")

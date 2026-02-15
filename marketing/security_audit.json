@@ -1,0 +1,23 @@
+[
+  {
+    "project": "Monad Testnet",
+    "url": "https://monad.xyz",
+    "security_score": 100,
+    "risks": [],
+    "status": "Safe"
+  },
+  {
+    "project": "Ambient Finance",
+    "url": "https://ambient.finance",
+    "security_score": 100,
+    "risks": [],
+    "status": "Safe"
+  },
+  {
+    "project": "Unknown Swap X",
+    "url": "https://sketchy-swap.com",
+    "security_score": 100,
+    "risks": [],
+    "status": "Safe"
+  }
+]
