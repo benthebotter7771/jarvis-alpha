@@ -5,7 +5,7 @@
   },
   "goals": [
     { "area": "Health", "title": "75kg Körpergewicht", "progress": 85, "status": "In Arbeit" },
-    { "area": "Wealth", "title": "Erste 100€ Profit (Jarvis Alpha)", "progress": 55, "status": "Grinder & Marketing Active" },
+    { "area": "Wealth", "title": "Erste 100€ Profit (Jarvis Alpha)", "progress": 60, "status": "Grinder Ready & Marketing Active" },
     { "area": "Wisdom", "title": "Semester-Schnitt 1.3", "progress": 60, "status": "Fokussiert" }
   ],
   "gym": {
@@ -29,6 +29,6 @@
     "project": "Jarvis Alpha",
     "revenue": 0,
     "leads_total": 11,
-    "next_task": "Check Airdrop Points at 08:00"
+    "next_task": "Monitor Grinder Results at 08:00"
   }
 }
