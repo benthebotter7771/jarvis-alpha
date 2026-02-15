@@ -5,7 +5,7 @@
   },
   "goals": [
     { "area": "Health", "title": "75kg Körpergewicht", "progress": 85, "status": "In Arbeit" },
-    { "area": "Wealth", "title": "Erste 100€ Profit (Jarvis Alpha)", "progress": 40, "status": "In Arbeit" },
+    { "area": "Wealth", "title": "Erste 100€ Profit (Jarvis Alpha)", "progress": 45, "status": "Automation Active" },
     { "area": "Wisdom", "title": "Semester-Schnitt 1.3", "progress": 60, "status": "Fokussiert" }
   ],
   "gym": {
@@ -28,7 +28,7 @@
   "sidehustle": {
     "project": "Jarvis Alpha",
     "revenue": 0,
-    "leads_total": 0,
-    "next_task": "Reddit Auto-Reply Setup"
+    "leads_total": 11,
+    "next_task": "Execute Outreach via RDP"
   }
 }
